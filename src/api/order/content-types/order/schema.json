@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "paypalId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "orderStatus": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "CREATED",
+        "COMPLETED",
+        "FAILED",
+        "CANCELED"
+      ]
+    },
+    "total": {
+      "type": "decimal"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "buyerEmail": {
+      "type": "email"
+    },
+    "buyerName": {
+      "type": "string"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "orders"
+    },
+    "paymentDate": {
+      "type": "datetime"
+    },
+    "rawData": {
+      "type": "json"
+    }
+  }
+}

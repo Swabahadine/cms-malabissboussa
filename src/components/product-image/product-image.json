@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_product_image_product_images",
+  "info": {
+    "displayName": "Product image",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "alternativeText": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
